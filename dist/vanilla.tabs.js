@@ -170,7 +170,8 @@
 	VanillaTabs.defaults = {
 		'selector': '.tabs',
 		'type': 'horizontal',
-		'responsiveBreak': 840
+		'responsiveBreak': 840,
+		'activeIndex' : 0
 	}
 
 	// make accessible globally
