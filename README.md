@@ -35,10 +35,10 @@ Load stylesheet and script file
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 			new VanillaTabs({
-				'selector': '.tabs',		// default is ".tabs"
-				'type': 'horizontal',		// can be horizontal / vertical / accordion
-				'responsiveBreak': 840,	// tabs become accordion on this device width
-				'activeIndex' : 0				// active tab index (starts from 0 )
+				'selector': '.tabs', // default is ".tabs"
+				'type': 'horizontal', // can be horizontal / vertical / accordion
+				'responsiveBreak': 840, // tabs become accordion on this device width
+				'activeIndex' : 0 // active tab index (starts from 0 )
 			});
 		});
 	</script>
