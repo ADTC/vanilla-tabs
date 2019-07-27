@@ -6,6 +6,16 @@ Responsive tabs-to-accordion script without jQuery, written using pure JavaScrip
 <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License" />
 </p>
 
+## Author
+
+Dmytro Kudleichuk
+
+<a href="https://www.linkedin.com/in/dmytro-kudleichuk/">LinkedIn</a>, <a href="https://github.com/DKudleichuk">GitHub</a>
+
+## Online Demo
+
+See <a href="https://dkudleichuk.github.io/vanilla-tabs/example.html">demo here</a> and <a href="https://github.com/DKudleichuk/vanilla-tabs">sources here</a>
+
 ## Getting Started
 
 Load stylesheet and script file
