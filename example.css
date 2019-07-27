@@ -1,0 +1,23 @@
+body {
+	background: #fafafa;
+	padding: 30px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.tabs h2 {
+	margin-top: 0;
+}
+
+.tabs p {
+	display: block;
+	margin: 0;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	margin: 30px 0;
+	height: 0;
+}
