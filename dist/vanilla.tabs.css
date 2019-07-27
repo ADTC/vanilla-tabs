@@ -170,7 +170,8 @@
 	height: 0;
 	transform: scaleY(0);
 	overflow: hidden;
-	transition: all 0.2s;
+	transition: transform 0.2s;
+	transform-origin: top left;
 }
 
 .tabs.style__accordion .tabs__content.is__active .tabs__content_wrapper,
