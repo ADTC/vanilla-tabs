@@ -38,7 +38,7 @@ Load stylesheet and script file
 				'selector': '.tabs', // default is ".tabs"
 				'type': 'horizontal', // can be horizontal / vertical / accordion
 				'responsiveBreak': 840, // tabs become accordion on this device width
-				'activeIndex' : 0 // active tab index (starts from 0 )
+				'activeIndex' : 0 // active tab index (starts from 0 ). Can be -1 for accordions.
 			});
 		});
 	</script>

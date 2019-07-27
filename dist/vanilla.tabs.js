@@ -37,7 +37,8 @@
 
 			let tabsElem = el,
 			childNodes = tabsElem.childNodes,
-			tabsTitles = [];
+			tabsTitles = [],
+			tabsStyle = tabs.options.type;
 
 			tabsElem.classList.add( 'style__' + tabs.options.type );
 
@@ -74,15 +75,18 @@
 			// set initial active tab
 			let activeTabIndex = Number( tabs.options.activeIndex );
 
-			// validate active tab index
-			if( activeTabIndex > (tabsTitles.length - 1) ) {
-				console.warn( 'VANILLA TABS: Active tab number from settings is bigger than tabs count. Please remember, that index starts from Zero! To avoid crashes, activeIndex option was reverted to 0.');
-				activeTabIndex = 0;
-			}
+			// validate active tab index. but, you can specify -1 for accordion tabs to make all of them closed by defaults
+			if( tabsStyle != 'accordion' && activeTabIndex != -1 ) {
+				if( activeTabIndex > (tabsTitles.length - 1) ) {
+					console.warn( 'VANILLA TABS: Active tab number from settings is bigger than tabs count. Please remember, that index starts from Zero! To avoid crashes, activeIndex option was reverted to 0.');
+					activeTabIndex = 0;
+				}
 
-			tabsElem.querySelectorAll( '.tabs__nav > .tabs__nav_link')[ activeTabIndex ].classList.add( 'is__active' );
-			tabsElem.querySelectorAll( '.tabs__content')[ activeTabIndex ].classList.add( 'is__active' );
-			tabsElem.querySelectorAll( '.tabs__content > .tabs__nav_link')[ activeTabIndex ].classList.add( 'is__active' );
+				tabsElem.querySelectorAll( '.tabs__nav > .tabs__nav_link')[ activeTabIndex ].classList.add( 'is__active' );
+				tabsElem.querySelectorAll( '.tabs__content')[ activeTabIndex ].classList.add( 'is__active' );
+				tabsElem.querySelectorAll( '.tabs__content > .tabs__nav_link')[ activeTabIndex ].classList.add( 'is__active' );
+
+			}
 
 		});
 
