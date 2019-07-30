@@ -29,6 +29,14 @@
 
 	}
 
+	// skip building tabs if they were already initialized
+	function skipIfInitialized( tabsElem ) {
+		// skip element if already initialized
+		if( tabsElem.classList.contains('tabs__initialized') ) {
+			return;
+		}
+	}
+
 	// Private function to initialize the UI Elements
 	function buildUI( tabs ){
 
@@ -40,13 +48,19 @@
 			tabsTitles = [],
 			tabsStyle = tabs.options.type;
 
+			skipIfInitialized( tabsElem );
+
 			tabsElem.classList.add( 'style__' + tabs.options.type );
+			tabsElem.classList.add( 'tabs__initialized' );
 
 			for( let i = 0; i < childNodes.length; i++ ) {
 
-				if( childNodes[i].classList && childNodes[i].classList.contains( 'tabs__content') ) {
+				let tabItem = childNodes[i];
 
-					let tabItem = childNodes[i];
+				if ( tabItem.nodeType != Node.TEXT_NODE ) {
+
+					// add tab__content CSS class
+					tabItem.classList.add( 'tabs__content');
 
 					// grab tab title from data attribute
 					let tabTitle = tabItem.dataset.title ? tabItem.dataset.title : '';
@@ -101,6 +115,8 @@
 		tabs.elems.forEach( function( el, i ) {
 
 			let tabsElem = el;
+
+			skipIfInitialized( tabsElem );
 
 			tabsElem.addEventListener( 'click', function( e ){
 
@@ -175,6 +191,8 @@
 				tabsContent = tabsElem.getElementsByClassName( 'tabs__content'),
 				mainNavLinks = tabsElem.querySelectorAll( '.tabs__nav > .tabs__nav_link'),
 				accordionNavLinks = tabsElem.querySelectorAll( '.tabs__content > .tabs__nav_link');
+
+				skipIfInitialized( tabsElem );
 				
 				if( window.innerWidth > Number( tabs.options.responsiveBreak ) ) {
 

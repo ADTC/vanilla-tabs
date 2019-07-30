@@ -50,9 +50,9 @@ Load stylesheet and script file
 
 ```
 <ul class="tabs">
-	<li data-title="First tab" class="tabs__content">Put here any content for a first tab</li>
-	<li data-title="Second tab" class="tabs__content">Put here any content for a second tab</li>
-	<li data-title="Third tab" class="tabs__content">Put here any content for a third tab</li>
+	<li data-title="First tab">Put here any content for a first tab</li>
+	<li data-title="Second tab">Put here any content for a second tab</li>
+	<li data-title="Third tab">Put here any content for a third tab</li>
 </ul>
 ```
 
