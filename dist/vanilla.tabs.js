@@ -1,56 +1,50 @@
-'use strict';
+class VanillaTabs {
 
-/**
- * 
- * Hey there! Here is my *really first* plugin, written using Pure JavaScript / ES5
- * Hope you'll enjoy using it!
- * 
- * ToDo: Re-write a plugin using ES6
- * 
- */
+	constructor( opts ) {
 
-/**
-  * Start writing a plugin using Immediately Invoked Function Expression (IIFE).
-  * Function is used to create a private scope: variable, created inside a function
-  * is not accessible outside the function
- */
+		const DEFAULTS = {
+			'selector': '.tabs',
+			'type': 'horizontal',
+			'responsiveBreak': 840,
+			'activeIndex' : 0
+		}
 
-(function(){
-
-	// Constructor function
-	const VanillaTabs = function( opts ) {
-
-		this.options = Object.assign( VanillaTabs.defaults, opts );
+		this.options = Object.assign( DEFAULTS, opts );
 		this.elems = document.querySelectorAll( this.options.selector );
 
-		buildUI( this );
-		handleNavigation( this );
-		handleResponsive( this );
+		// skip building tabs if they were already initialized
+		this.skipIfInitialized = ( tabsElem ) => {
 
-	}
+			// skip element if already initialized
+			if( tabsElem.classList.contains('tabs__initialized') ) {
+				return;
+			}
 
-	// skip building tabs if they were already initialized
-	function skipIfInitialized( tabsElem ) {
-		// skip element if already initialized
-		if( tabsElem.classList.contains('tabs__initialized') ) {
-			return;
 		}
+
+		this.buildUI();
+		this.handleNavigation();
+		this.handleResponsive();
+
 	}
 
-	// Private function to initialize the UI Elements
-	function buildUI( tabs ){
+	// initialize the UI Elements
+	buildUI(){
+
+		let tabs = this.elems;
 
 		// walk on all tabs on the page
-		tabs.elems.forEach( function( el, i ) {
+		tabs.forEach( ( el, i ) => {
+			
 
 			let tabsElem = el,
 			childNodes = tabsElem.childNodes,
 			tabsTitles = [],
-			tabsStyle = tabs.options.type;
+			tabsStyle = this.options.type;
 
-			skipIfInitialized( tabsElem );
+			this.skipIfInitialized( tabsElem );
 
-			tabsElem.classList.add( 'style__' + tabs.options.type );
+			tabsElem.classList.add( 'style__' + this.options.type );
 			tabsElem.classList.add( 'tabs__initialized' );
 
 			for( let i = 0; i < childNodes.length; i++ ) {
@@ -80,14 +74,14 @@
 			// create horizontal / vertical tabs navigation elements
 			let navElemsHTML = '';
 
-			tabsTitles.forEach( function( title ) {
+			tabsTitles.forEach( ( title ) => {
 				navElemsHTML = navElemsHTML + '<a class="tabs__nav_link">' + title + '</a>';
 			});
 
 			tabsElem.insertAdjacentHTML( 'afterbegin', '<li class="tabs__nav">' + navElemsHTML + '</li>');
 
 			// set initial active tab
-			let activeTabIndex = Number( tabs.options.activeIndex );
+			let activeTabIndex = Number( this.options.activeIndex );
 
 			// validate active tab index. but, you can specify -1 for accordion tabs to make all of them closed by defaults
 			if( tabsStyle != 'accordion' && activeTabIndex != -1 ) {
@@ -106,17 +100,18 @@
 
 	}
 
-	// Navigation: assign click events
-	function handleNavigation( tabs ) {
+	// navigation: assign click events
+	handleNavigation() {
 
-		let tabsStyle = tabs.options.type;
+		let tabs = this.elems,
+		tabsStyle = this.options.type;
 
 		// walk on all tabs on the page
-		tabs.elems.forEach( function( el, i ) {
+		tabs.forEach( ( el, i ) => {
 
 			let tabsElem = el;
 
-			skipIfInitialized( tabsElem );
+			this.skipIfInitialized( tabsElem );
 
 			tabsElem.addEventListener( 'click', function( e ){
 
@@ -155,14 +150,14 @@
 					tabsContent[ activeTabIndex ].classList.add( 'is__active');
 
 					// add active classes and remove inactive for main nav links
-					mainNavLinks.forEach( function( el ) {
+					mainNavLinks.forEach( ( el ) => {
 						el.classList.remove( 'is__active');
 					});
 
 					mainNavLinks[ activeTabIndex ].classList.add( 'is__active');
 
 					// add active classes and remove inactive for accordion nav links
-					accordionNavLinks.forEach( function( el ) {
+					accordionNavLinks.forEach( ( el ) => {
 						el.classList.remove( 'is__active');
 					});									
 
@@ -176,25 +171,26 @@
 
 	}
 
-	// Responsive: tabs to accordion
-	function handleResponsive( tabs ) {
+	// responsive: tabs to accordion
+	handleResponsive() {
 
-		const responsiveClassName = 'is__responsive',
-		tabsStyle = tabs.options.type;
+		let tabs = this.elems,
+		responsiveClassName = 'is__responsive',
+		tabsStyle = this.options.type;
 
-		window.addEventListener( 'resize', function() {
+		window.addEventListener( 'resize', () => {
 
 			// walk on all tabs on the page
-			tabs.elems.forEach( function( el, i ) {
+			tabs.forEach( ( el, i ) => {
 
 				let tabsElem = el,
 				tabsContent = tabsElem.getElementsByClassName( 'tabs__content'),
 				mainNavLinks = tabsElem.querySelectorAll( '.tabs__nav > .tabs__nav_link'),
 				accordionNavLinks = tabsElem.querySelectorAll( '.tabs__content > .tabs__nav_link');
 
-				skipIfInitialized( tabsElem );
+				this.skipIfInitialized( tabsElem );
 				
-				if( window.innerWidth > Number( tabs.options.responsiveBreak ) ) {
+				if( window.innerWidth > Number( this.options.responsiveBreak ) ) {
 
 					tabsElem.classList.remove( responsiveClassName );
 
@@ -223,15 +219,4 @@
 
 	}
 
-	// Attach our defaults for plugin to the plugin itself
-	VanillaTabs.defaults = {
-		'selector': '.tabs',
-		'type': 'horizontal',
-		'responsiveBreak': 840,
-		'activeIndex' : 0
-	}
-
-	// make accessible globally
-	window.VanillaTabs = VanillaTabs;
-
-})();
+}
