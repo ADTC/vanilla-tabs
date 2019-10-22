@@ -1,5 +1,3 @@
-'use strict';
-
 class VanillaTabs {
 	constructor(opts) {
 		const DEFAULTS = {
@@ -15,10 +13,7 @@ class VanillaTabs {
 
 		// skip building tabs if they were already initialized
 		this.skipIfInitialized = (tabsElem) => {
-			// skip element if already initialized
-			if (tabsElem.classList.contains('tabs__initialized')) {
-				return;
-			}
+			if (tabsElem.classList.contains('tabs_init')) { return; }
 		}
 
 		this.buildUI();
@@ -41,8 +36,10 @@ class VanillaTabs {
 
 			this.skipIfInitialized(tabsElem);
 
-			tabsElem.classList.add('style_' + tabsStyle);
-			tabsElem.classList.add('tabs__initialized');
+			tabsElem.classList.add('style_' + tabsStyle, 'tabs_init');
+			for (let child of tabsElem.children) {
+				if (child.dataset.title) { child.classList.add(tabContainer.slice(1)); }
+			}
 
 			for (let child of childNodes) {
 				if (child.classList && child.classList.contains(tabContainer.slice(1))) {
@@ -50,21 +47,14 @@ class VanillaTabs {
 					let tabTitle = child.dataset.title ? child.dataset.title : '';
 					tabsTitles.push(tabTitle);
 
-					// wrap tab content
-					child.innerHTML = `<div class="content_wrapper">${child.innerHTML}</div>`;
-
-					// insert nav link for accordion navigation
-					child.insertAdjacentHTML('afterbegin', `<span class="link">${tabTitle}</span>`);
+					child.innerHTML = `<div class="content_wrapper">${child.innerHTML}</div>`; // wrap tab content
+					child.insertAdjacentHTML('afterbegin', `<span class="link">${tabTitle}</span>`); // insert nav link for accordion navigation
 				}
 			}
 
 			// create horizontal / vertical tabs navigation elements
 			let navElemsHTML = '';
-
-			tabsTitles.forEach((title) => {
-				navElemsHTML = `${navElemsHTML}<span class="link">${title}</span>`;
-			});
-
+			for (let title of tabsTitles) { navElemsHTML = `${navElemsHTML}<span class="link">${title}</span>`; }
 			tabsElem.insertAdjacentHTML('afterbegin', `<li class="nav">${navElemsHTML}</li>`);
 
 			// validate active tab index. but, you can specify -1 for accordion tabs to make all of them closed by defaults
@@ -118,29 +108,20 @@ class VanillaTabs {
 						return;
 					}
 
-					// remove active class for inactive tabs
-					for (let item of tabsContent) {
-						item.classList.remove('active');
-					}
-					// add active class for a current (active) tab
-					tabsContent[activeTabIndex].classList.add('active');
+					for (let item of tabsContent) { item.classList.remove('active'); } // remove active class for inactive tabs
+					tabsContent[activeTabIndex].classList.add('active'); // add active class for a current (active) tab
 
 					// add active classes and remove inactive for main nav links
-					for (let link of mainNavLinks) {
-						link.classList.remove('active');
-					}
+					for (let link of mainNavLinks) { link.classList.remove('active'); }
 					mainNavLinks[activeTabIndex].classList.add('active');
 
 					// add active classes and remove inactive for accordion nav links
-					for (let link of accordionNavLinks) {
-						link.classList.remove('active');
-					}
+					for (let link of accordionNavLinks) { link.classList.remove('active'); }
 					accordionNavLinks[activeTabIndex].classList.add('active');
 				}
 			});
 		});
 	}
-
 
 
 	// responsive: tabs to accordion
@@ -173,15 +154,11 @@ class VanillaTabs {
 							accordionNavLinks[0].classList.add('active');
 						}
 					}
-
-				} else {
-					tabsElem.classList.add(responsiveClassName);
 				}
+				else { tabsElem.classList.add(responsiveClassName); }
 			});
 		});
 
-		// manually fire resize event
-		window.dispatchEvent(new Event('resize'));
+		window.dispatchEvent(new Event('resize')); // manually fire resize event
 	}
-
 }

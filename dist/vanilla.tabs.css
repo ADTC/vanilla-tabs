@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Roboto:500,500i,700,700i&subset=cyrillic');
+
+:root {
+	--fg: #263238;
+	--fg_light: rgba(38, 50, 56, .2);
+	--bg: #f5f6f7;
+	--active_tab: white;
+	--inactive_tab: #eee;
+	--accent: #03a9f4;
+}
+
 /* Global tabs styles */
 [class*='style_'] {
 	width: 100%;
 	list-style: none;
+	color: var(--fg);
 }
 
 [class*='style_'] .link {
@@ -129,8 +141,24 @@
 .style_vertical.responsive .content .link,
 .style_horizontal.responsive .link,
 .style_horizontal.responsive .content .link {
-	display: block;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	padding: 8px 16px;
+}
+
+.style_accordion .content .link:after,
+.style_vertical.responsive .content .link:after,
+.style_horizontal.responsive .content .link:after {
+	content: '\1f780';
+	font-size: inherit;
+}
+
+.style_accordion .content.active .link:after,
+.style_vertical.responsive .content.active .link:after,
+.style_horizontal.responsive .content.active .link:after {
+	content: '\1f783';
+	font-size: inherit;
 }
 
 .style_accordion .link.active,

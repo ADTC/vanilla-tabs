@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Vanilla Tabs Example</title>
-	<link rel="stylesheet" type="text/css" href="example.css">
 	<link rel="stylesheet" type="text/css" href="dist/vanilla.tabs.css">
+	<link rel="stylesheet" type="text/css" href="example.css">
 	<base target="_blank">
 </head>
 <body>
@@ -22,9 +22,11 @@
 	<p>Initial open tab #2</p>
 
 	<ul id="tabs-h">
-		<li data-title="Horizontal First tab" class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus lobortis sapien, ut rhoncus dui sagittis vel. Donec rhoncus convallis justo, in placerat nibh auctor ut. Aliquam erat volutpat. Morbi finibus velit et erat vehicula, facilisis viverra magna euismod. Nullam consequat a justo id luctus. Sed vitae maximus massa. Integer ligula ligula, semper ac feugiat vel, viverra sed nisi. In commodo lacus non orci faucibus mollis. Maecenas sit amet gravida leo, non ornare nisl. Etiam rhoncus dui vitae magna pulvinar, eu semper ex porttitor. Nulla facilisi. Donec ac tortor arcu. Nulla pharetra suscipit nulla. Ut maximus justo vitae libero fermentum efficitur. Aliquam mattis quam erat, eget varius tortor cursus eget.</li>
-		<li data-title="Horizontal Second tab" class="content">Pellentesque non felis sed nibh ultrices molestie in id ante. Aenean sollicitudin, lorem sed malesuada tempor, erat odio imperdiet mi, condimentum sagittis arcu leo sed erat. Nam sed ex lectus. Praesent efficitur ex vel nunc tempus aliquet. Nullam sit amet ligula enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.</li>
-		<li data-title="Horizontal Third tab" class="content">Nullam quis eleifend massa. Nullam ut ex libero. Donec ac enim in ipsum interdum laoreet quis vestibulum risus. Curabitur pharetra dictum cursus. Praesent suscipit ultrices massa, ullamcorper ullamcorper leo tristique id. Praesent lobortis, mauris at placerat tempus, diam ex auctor quam, a posuere metus purus non nibh. Nunc sagittis dui lectus, non euismod dolor consequat nec. Proin non ipsum tempus, accumsan eros vel, mollis neque. Mauris sit amet justo non turpis porttitor luctus sed sed metus. Duis viverra sapien enim, non placerat erat feugiat maximus. Ut semper id mi id convallis.</li>
+		<li data-title="Horizontal First tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus lobortis sapien, ut rhoncus dui sagittis vel. Donec rhoncus convallis justo, in placerat nibh auctor ut. Aliquam erat volutpat. Morbi finibus velit et erat vehicula, facilisis viverra magna euismod. Nullam consequat a justo id luctus. Sed vitae maximus massa. Integer ligula ligula, semper ac feugiat vel, viverra sed nisi. In commodo lacus non orci faucibus mollis. Maecenas sit amet gravida leo, non ornare nisl. Etiam rhoncus dui vitae magna pulvinar, eu semper ex porttitor. Nulla facilisi. Donec ac tortor arcu. Nulla pharetra suscipit nulla. Ut maximus justo vitae libero fermentum efficitur. Aliquam mattis quam erat, eget varius tortor cursus eget.</li>
+
+		<li data-title="Horizontal Second tab">Pellentesque non felis sed nibh ultrices molestie in id ante. Aenean sollicitudin, lorem sed malesuada tempor, erat odio imperdiet mi, condimentum sagittis arcu leo sed erat. Nam sed ex lectus. Praesent efficitur ex vel nunc tempus aliquet. Nullam sit amet ligula enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.</li>
+
+		<li data-title="Horizontal Third tab">Nullam quis eleifend massa. Nullam ut ex libero. Donec ac enim in ipsum interdum laoreet quis vestibulum risus. Curabitur pharetra dictum cursus. Praesent suscipit ultrices massa, ullamcorper ullamcorper leo tristique id. Praesent lobortis, mauris at placerat tempus, diam ex auctor quam, a posuere metus purus non nibh. Nunc sagittis dui lectus, non euismod dolor consequat nec. Proin non ipsum tempus, accumsan eros vel, mollis neque. Mauris sit amet justo non turpis porttitor luctus sed sed metus. Duis viverra sapien enim, non placerat erat feugiat maximus. Ut semper id mi id convallis.</li>
 	</ul>
 
 	<hr>
@@ -33,24 +35,30 @@
 	<p>Initial open tab #1</p>
 
 	<ul id="tabs-v">
-		<li data-title="Vertical First tab with accordion" class="content">
+		<li data-title="Vertical First tab with accordion">
 			<h2>Nested accordion tabs</h2>
 			<p>All tabs initially closed by specifying <code>'activeIndex': -1</code> option. Works only for accordions.</p>
+
 			<ul id="tabs-sub">
-				<li data-title="Nested accordion First tab" class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero libero qui culpa aspernatur aperiam iure, perferendis vel illo aliquam tempora voluptatem explicabo nisi tempore nulla nesciunt? Atque corrupti veniam nihil?</li>
-				<li data-title="Nested accordion Second tab" class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro itaque voluptatum debitis harum molestiae nulla, aut rem, consequatur cupiditate odit repellendus. Odio autem eos animi culpa iure nihil dignissimos quod.</li>
-				<li data-title="Nested accordion Third tab" class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, natus eaque soluta dicta cumque necessitatibus ullam ea! Pariatur, ratione totam ad id aut natus repudiandae debitis ipsam laboriosam blanditiis inventore.</li>
+				<li data-title="Nested accordion First tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero libero qui culpa aspernatur aperiam iure, perferendis vel illo aliquam tempora voluptatem explicabo nisi tempore nulla nesciunt? Atque corrupti veniam nihil?</li>
+
+				<li data-title="Nested accordion Second tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro itaque voluptatum debitis harum molestiae nulla, aut rem, consequatur cupiditate odit repellendus. Odio autem eos animi culpa iure nihil dignissimos quod.</li>
+
+				<li data-title="Nested accordion Third tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, natus eaque soluta dicta cumque necessitatibus ullam ea! Pariatur, ratione totam ad id aut natus repudiandae debitis ipsam laboriosam blanditiis inventore.</li>
 			</ul>
 		</li>
-		<li data-title="Vertical Second tab" class="content">
+
+		<li data-title="Vertical Second tab">
 			<h2>Some heading 2</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus lobortis sapien, ut rhoncus dui sagittis vel. Donec rhoncus convallis justo, in placerat nibh auctor ut. Aliquam erat volutpat. Morbi finibus velit et erat vehicula, facilisis viverra magna euismod. Nullam consequat a justo id luctus. Sed vitae maximus massa. Integer ligula ligula, semper ac feugiat vel, viverra sed nisi. In commodo lacus non orci faucibus mollis. Maecenas sit amet gravida leo, non ornare nisl. Etiam rhoncus dui vitae magna pulvinar, eu semper ex porttitor. Nulla facilisi. Donec ac tortor arcu. Nulla pharetra suscipit nulla. Ut maximus justo vitae libero fermentum efficitur. Aliquam mattis quam erat, eget varius tortor cursus eget.</p>
 		</li>
-		<li data-title="Vertical Third tab" class="content">
+
+		<li data-title="Vertical Third tab">
 			<h2>Some heading 3</h2>
 			<p>Pellentesque non felis sed nibh ultrices molestie in id ante. Aenean sollicitudin, lorem sed malesuada tempor, erat odio imperdiet mi, condimentum sagittis arcu leo sed erat. Nam sed ex lectus. Praesent efficitur ex vel nunc tempus aliquet. Nullam sit amet ligula enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.</p>
 		</li>
-		<li data-title="Vertical Fourth tab" class="content">
+
+		<li data-title="Vertical Fourth tab">
 			<h2>Some heading 4</h2>
 			<p>Nullam quis eleifend massa. Nullam ut ex libero. Donec ac enim in ipsum interdum laoreet quis vestibulum risus. Curabitur pharetra dictum cursus. Praesent suscipit ultrices massa, ullamcorper ullamcorper leo tristique id. Praesent lobortis, mauris at placerat tempus, diam ex auctor quam, a posuere metus purus non nibh. Nunc sagittis dui lectus, non euismod dolor consequat nec. Proin non ipsum tempus, accumsan eros vel, mollis neque. Mauris sit amet justo non turpis porttitor luctus sed sed metus. Duis viverra sapien enim, non placerat erat feugiat maximus. Ut semper id mi id convallis.</p>
 		</li>
@@ -62,10 +70,15 @@
 	<p>All tabs initially closed by specifying <code>'activeIndex': -1</code> option. Works only for accordions.</p>
 
 	<ul id="tabs-a">
-		<li data-title="Accordion First tab" class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus lobortis sapien, ut rhoncus dui sagittis vel. Donec rhoncus convallis justo, in placerat nibh auctor ut. Aliquam erat volutpat. Morbi finibus velit et erat vehicula, facilisis viverra magna euismod. Nullam consequat a justo id luctus. Sed vitae maximus massa. Integer ligula ligula, semper ac feugiat vel, viverra sed nisi. In commodo lacus non orci faucibus mollis. Maecenas sit amet gravida leo, non ornare nisl. Etiam rhoncus dui vitae magna pulvinar, eu semper ex porttitor. Nulla facilisi. Donec ac tortor arcu. Nulla pharetra suscipit nulla. Ut maximus justo vitae libero fermentum efficitur. Aliquam mattis quam erat, eget varius tortor cursus eget.</li>
-		<li data-title="Accordion Second tab" class="content">Pellentesque non felis sed nibh ultrices molestie in id ante. Aenean sollicitudin, lorem sed malesuada tempor, erat odio imperdiet mi, condimentum sagittis arcu leo sed erat. Nam sed ex lectus. Praesent efficitur ex vel nunc tempus aliquet. Nullam sit amet ligula enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.</li>
-		<li data-title="Accordion Third tab" class="content">Nullam quis eleifend massa. Nullam ut ex libero. Donec ac enim in ipsum interdum laoreet quis vestibulum risus. Curabitur pharetra dictum cursus. Praesent suscipit ultrices massa, ullamcorper ullamcorper leo tristique id. Praesent lobortis, mauris at placerat tempus, diam ex auctor quam, a posuere metus purus non nibh. Nunc sagittis dui lectus, non euismod dolor consequat nec. Proin non ipsum tempus, accumsan eros vel, mollis neque. Mauris sit amet justo non turpis porttitor luctus sed sed metus. Duis viverra sapien enim, non placerat erat feugiat maximus. Ut semper id mi id convallis.</li>
+		<li data-title="Accordion First tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus lobortis sapien, ut rhoncus dui sagittis vel. Donec rhoncus convallis justo, in placerat nibh auctor ut. Aliquam erat volutpat. Morbi finibus velit et erat vehicula, facilisis viverra magna euismod. Nullam consequat a justo id luctus. Sed vitae maximus massa. Integer ligula ligula, semper ac feugiat vel, viverra sed nisi. In commodo lacus non orci faucibus mollis. Maecenas sit amet gravida leo, non ornare nisl. Etiam rhoncus dui vitae magna pulvinar, eu semper ex porttitor. Nulla facilisi. Donec ac tortor arcu. Nulla pharetra suscipit nulla. Ut maximus justo vitae libero fermentum efficitur. Aliquam mattis quam erat, eget varius tortor cursus eget.</li>
+
+		<li data-title="Accordion Second tab">Pellentesque non felis sed nibh ultrices molestie in id ante. Aenean sollicitudin, lorem sed malesuada tempor, erat odio imperdiet mi, condimentum sagittis arcu leo sed erat. Nam sed ex lectus. Praesent efficitur ex vel nunc tempus aliquet. Nullam sit amet ligula enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.</li>
+
+		<li data-title="Accordion Third tab">Nullam quis eleifend massa. Nullam ut ex libero. Donec ac enim in ipsum interdum laoreet quis vestibulum risus. Curabitur pharetra dictum cursus. Praesent suscipit ultrices massa, ullamcorper ullamcorper leo tristique id. Praesent lobortis, mauris at placerat tempus, diam ex auctor quam, a posuere metus purus non nibh. Nunc sagittis dui lectus, non euismod dolor consequat nec. Proin non ipsum tempus, accumsan eros vel, mollis neque. Mauris sit amet justo non turpis porttitor luctus sed sed metus. Duis viverra sapien enim, non placerat erat feugiat maximus. Ut semper id mi id convallis.</li>
 	</ul>
+
+	<hr>
+
 </main>
 
 	<script src="dist/vanilla.tabs.js"></script>
