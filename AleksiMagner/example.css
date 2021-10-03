@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:link,
+*:visited {
+	text-decoration: none;
+	color: var(--accent);
+}
+
+body {
+	font-family: 'PT Serif', serif;
+	font-size: 12pt;
+	line-height: 1.25;
+	color: var(--fg);
+	background: var(--bg);
+	overflow-x: hidden;
+}
+
+main {
+	width: 60%;
+	margin: 0 auto;
+}
+
+h1, h2, h3 {
+	display: block;
+	padding: 1em 0 0;
+	font-family: Roboto, sans-serif;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1.5;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+p {
+	margin: .7em 0;
+	line-height: 1.5;
+}
+
+code {
+	font-family: monospace;
+	font-size: 95%;
+}
+
+hr {
+	margin: 1.5rem auto;
+	height: 0;
+	border: 0;
+	border-bottom: 1px solid var(--fg_light);
+}

@@ -14,10 +14,6 @@ Dmytro Kudleichuk
 
 ## Online Demo
 
-See <a href="https://adtc.github.io/vanilla-tabs/example.html">demo here</a> and <a href="https://github.com/ADTC/vanilla-tabs">sources here</a>
-
-### AleksiMagner's version
-
 See <a href="https://adtc.github.io/vanilla-tabs/AleksiMagner/example.html">demo here</a> and <a href="https://github.com/ADTC/vanilla-tabs/tree/master">sources here</a>
 
 ## Getting Started
@@ -39,10 +35,11 @@ Load stylesheet and script file
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 			new VanillaTabs({
-				'selector': '.tabs', // default is ".tabs"
-				'type': 'horizontal', // can be horizontal / vertical / accordion
-				'responsiveBreak': 840, // tabs become accordion on this device width
-				'activeIndex' : 0 // active tab index (starts from 0 ). Can be -1 for accordions.
+				'selector': '#tabs',	// default ID 'tabs'
+				'container': '.content',// default is '.content'
+				'type': 'horizontal', 	// accordion, horizontal or vertical
+				'responsiveBreak': 840,	// tabs become accordion on this device width
+				'activeIndex': 1				// active tab index (starts from 0). Can be -1 for accordions.
 			});
 		});
 	</script>
@@ -50,10 +47,10 @@ Load stylesheet and script file
 </html>
 ```
 
-## Markup 
+## Markup
 
 ```
-<ul class="tabs">
+<ul id="tabs">
 	<li data-title="First tab">Put here any content for a first tab</li>
 	<li data-title="Second tab">Put here any content for a second tab</li>
 	<li data-title="Third tab">Put here any content for a third tab</li>

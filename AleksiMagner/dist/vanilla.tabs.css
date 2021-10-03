@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Roboto:500,500i,700,700i&subset=cyrillic');
+
+:root {
+	--fg: #263238;
+	--fg_light: rgba(38, 50, 56, .2);
+	--bg: #f5f6f7;
+	--active_tab: white;
+	--inactive_tab: #eee;
+	--accent: #03a9f4;
+}
+
+/* Global tabs styles */
+[class*='style_'] {
+	width: 100%;
+	list-style: none;
+	color: var(--fg);
+}
+
+[class*='style_'] .link {
+	cursor: pointer;
+	font-family: Roboto, sans-serif;
+	font-weight: normal;
+	background: var(--active_tab);
+}
+
+[class*='style_'] .nav .link {
+	padding: 10px;
+	border: 1px solid var(--fg_light);
+	background: var(--inactive_tab);
+}
+
+[class*='style_'] .nav .link.active {
+	font-weight: bold;
+	border: 1px solid var(--fg_light);
+	background: var(--active_tab);
+}
+
+[class*='style_'] .content {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	transition: opacity .1s;
+	overflow: hidden;
+}
+
+[class*='style_'] .content.active {
+	display: block;
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+	padding: 1em 5%;
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--fg_light);
+	background: var(--active_tab);
+  overflow: hidden;
+	z-index: 1;
+}
+
+
+/* Horizontal tabs styles */
+.style_horizontal .nav {
+	display: flex;
+	margin-bottom: -1px;
+}
+
+.style_horizontal .nav .link {
+	display: block;
+	margin: 0 3px;
+	border-radius: 4px 4px 0 0;
+	border-bottom: 0;
+}
+
+.style_horizontal .nav .link.active {
+	margin-bottom: -1px;
+	border-bottom: 1px solid var(--active_tab);
+	z-index: 2;
+}
+
+.style_horizontal .content {
+	flex-grow: 1;
+	width: 0;
+}
+
+.style_horizontal .content.active {
+	border-radius: 0 0 4px 4px;
+}
+
+
+/* Vertical tabs styles */
+.style_vertical {
+	display: flex;
+}
+
+.style_vertical .nav {
+	flex: 0 0 30%;
+	margin-right: -1px;
+	z-index: 2;
+}
+
+.style_vertical .nav .link {
+	display: block;
+	margin: 3px 0;
+	border-radius: 4px 0 0 4px;
+}
+
+.style_vertical .nav .link.active {
+	border-right: 1px solid var(--active_tab);
+}
+
+.style_vertical .content {
+	flex-grow: 1;
+	width: 0;
+}
+
+.style_vertical .content.active {
+	border-radius: 0 4px 4px 0;
+}
+
+
+/* Accordion and responsive styles */
+.style_accordion,
+.style_vertical.responsive,
+.style_horizontal,
+.style_horizontal.responsive {
+	display: block;
+}
+
+.style_accordion .nav,
+.style_vertical .content .link,
+.style_vertical.responsive .nav,
+.style_horizontal .content .link,
+.style_horizontal.responsive .nav {
+	display: none;
+}
+
+.style_accordion .link,
+.style_accordion .content .link,
+.style_vertical.responsive .link,
+.style_vertical.responsive .content .link,
+.style_horizontal.responsive .link,
+.style_horizontal.responsive .content .link {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 8px 16px;
+}
+
+.style_accordion .content .link:after,
+.style_vertical.responsive .content .link:after,
+.style_horizontal.responsive .content .link:after {
+	content: '\1f780';
+	font-size: inherit;
+}
+
+.style_accordion .content.active .link:after,
+.style_vertical.responsive .content.active .link:after,
+.style_horizontal.responsive .content.active .link:after {
+	content: '\1f783';
+	font-size: inherit;
+}
+
+.style_accordion .link.active,
+.style_vertical.responsive .link.active,
+.style_horizontal.responsive .link.active {
+	padding: 8px 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--fg_light);
+	border-bottom: 1px solid var(--fg_light);
+}
+
+.style_accordion .content,
+.style_vertical.responsive .content,
+.style_horizontal.responsive .content {
+	display: block;
+	flex: none;
+	opacity: 1;
+	margin-bottom: 8px;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	border: 1px solid var(--fg_light);
+	visibility: visible;
+	overflow: auto;
+}
+
+.style_accordion .content.active,
+.style_vertical.responsive .content.active,
+.style_horizontal.responsive .content.active {
+	border-radius: 4px;
+}
+
+.style_accordion .content_wrapper,
+.style_vertical.responsive .content_wrapper,
+.style_horizontal.responsive .content_wrapper {
+	height: 0;
+	transform: scaleY(0);
+	overflow: hidden;
+	transition: transform .1s;
+	transform-origin: top left;
+}
+
+.style_accordion .content_wrapper {
+	display: none;
+}
+
+.style_accordion .content.active .content_wrapper,
+.style_vertical.responsive .content.active .content_wrapper,
+.style_horizontal.responsive .content.active .content_wrapper {
+	padding: 10px 0;
+	height: auto;
+	transform: scaleY(1);
+}
+
+.style_accordion .content.active .content_wrapper {
+	display: block;
+}
