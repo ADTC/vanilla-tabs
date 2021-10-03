@@ -16,7 +16,7 @@ Dmytro Kudleichuk
 
 See <a href="https://adtc.github.io/vanilla-tabs/example.html">demo here</a> and <a href="https://github.com/ADTC/vanilla-tabs">sources here</a>
 
-### AleksiMagner's version
+### [AleksiMagner's version](https://adtc.github.io/vanilla-tabs/AleksiMagner/)
 
 See <a href="https://adtc.github.io/vanilla-tabs/AleksiMagner/example.html">demo here</a> and <a href="https://github.com/ADTC/vanilla-tabs/tree/master">sources here</a>
 
