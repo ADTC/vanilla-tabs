@@ -14,7 +14,7 @@ Dmytro Kudleichuk
 
 ## Online Demo
 
-See <a href="https://dkudleichuk.github.io/vanilla-tabs/example.html">demo here</a> and <a href="https://github.com/DKudleichuk/vanilla-tabs">sources here</a>
+See <a href="https://adtc.github.io/vanilla-tabs/example.html">demo here</a> and <a href="https://github.com/ADTC/vanilla-tabs">sources here</a>
 
 ## Getting Started
 
